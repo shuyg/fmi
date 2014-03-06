@@ -1,6 +1,6 @@
 <?php
 // http://stackoverflow.com/questions/13007477/doctrine-2-and-zf2-integration
-namespace AuthDoctrine; // SUPER important for Doctrine othervise can not find the Entities
+//namespace AuthDoctrine; // SUPER important for Doctrine othervise can not find the Entities <- Just add AuthDoctrine on line 64
 
 return array(
 	'controllers' => array(
@@ -61,7 +61,7 @@ return array(
                 'identity_class' => 'AuthDoctrine\Entity\User', //'Application\Entity\User',
                 'identity_property' => 'usrName', // 'username', // 'email',
                 'credential_property' => 'usrPassword', // 'password',
-                'credential_callable' => function(Entity\User $user, $passwordGiven) { // not only User
+                'credential_callable' => function(AuthDoctrine\Entity\User $user, $passwordGiven) { // not only User
                     // return my_awesome_check_test($user->getPassword(), $passwordGiven);
 					// echo '<h1>callback user->getPassword = ' .$user->getPassword() . ' passwordGiven = ' . $passwordGiven . '</h1>';
 					//- if ($user->getPassword() == md5($passwordGiven)) { // original
